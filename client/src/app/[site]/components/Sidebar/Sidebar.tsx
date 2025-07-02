@@ -72,22 +72,18 @@ export function Sidebar() {
             href={getTabPath("map")}
             icon={<Map className="w-4 h-4" />}
           />
-          {IS_CLOUD && (
-            <SidebarLink
+          <SidebarLink
               label="Pages"
               active={isActiveTab("pages")}
               href={getTabPath("pages")}
               icon={<File className="w-4 h-4" />}
-            />
-          )}
-          {IS_CLOUD && (
-            <SidebarLink
+          />
+          <SidebarLink
               label="Performance"
               active={isActiveTab("performance")}
               href={getTabPath("performance")}
               icon={<Gauge className="w-4 h-4" />}
-            />
-          )}
+          />
           <SidebarLink
             label="Goals"
             active={isActiveTab("goals")}
