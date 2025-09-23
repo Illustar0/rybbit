@@ -22,7 +22,6 @@ import { useGetSite } from "../../../../api/admin/sites";
 import { Sidebar as SidebarComponents } from "../../../../components/sidebar/Sidebar";
 import { SiteSettings } from "../../../../components/SiteSettings/SiteSettings";
 import { authClient } from "../../../../lib/auth";
-import { IS_CLOUD } from "../../../../lib/const";
 import { useEmbedablePage } from "../../utils";
 import { SiteSelector } from "./SiteSelector";
 
@@ -70,22 +69,18 @@ function SidebarContent() {
           href={getTabPath("map")}
           icon={<Map className="w-4 h-4" />}
         />
-        {IS_CLOUD && (
-          <SidebarComponents.Item
-            label="Pages"
-            active={isActiveTab("pages")}
-            href={getTabPath("pages")}
-            icon={<File className="w-4 h-4" />}
-          />
-        )}
-        {IS_CLOUD && (
-          <SidebarComponents.Item
-            label="Performance"
-            active={isActiveTab("performance")}
-            href={getTabPath("performance")}
-            icon={<Gauge className="w-4 h-4" />}
-          />
-        )}
+        <SidebarComponents.Item
+          label="Pages"
+          active={isActiveTab("pages")}
+          href={getTabPath("pages")}
+          icon={<File className="w-4 h-4" />}
+        />
+        <SidebarComponents.Item
+          label="Performance"
+          active={isActiveTab("performance")}
+          href={getTabPath("performance")}
+          icon={<Gauge className="w-4 h-4" />}
+        />
         <SidebarComponents.Item
           label="Goals"
           active={isActiveTab("goals")}
